@@ -2051,7 +2051,9 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 		$message .= __( 'To set your password, visit the following address:' ) . "\r\n\r\n";
 		$message .= network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user->user_login ), 'login' ) . "\r\n\r\n";
 
-		$message .= wp_login_url() . "\r\n";
+		$message .= __( 'Please take a few minutes to complete this registration form:' ) . "\r\n\r\n";
+		
+		$message .= network_site_url("register") . "\r\n"
 
 		$wp_new_user_notification_email = array(
 			'to'      => $user->user_email,
